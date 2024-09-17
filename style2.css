@@ -1,0 +1,117 @@
+/* Basic reset and styling */
+body, h1, h2, h3, p, ul {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    padding: 0;
+    margin: 0;
+    background-color: #f4f4f4; /* Light background for readability */
+    color: #333; /* Dark text for contrast */
+}
+
+header {
+    background: #007bff; /* Calming blue for header */
+    color: #fff;
+    padding: 10px 0;
+    text-align: center;
+}
+
+header nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+header nav ul li {
+    display: inline;
+    margin: 0 10px;
+}
+
+header nav ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+/* Main content styling */
+main {
+    padding: 20px;
+}
+
+/* Hide all sections by default */
+.content-section {
+    display: none;
+}
+
+/* Show the targeted section */
+:target {
+    display: block;
+}
+
+.lab-card {
+    border: 1px solid #ddd;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    background: #fff; /* Clean white background for cards */
+}
+
+.lab-card h3 {
+    margin-bottom: 10px;
+    color: #007bff; /* Use the same blue as the header for consistency */
+}
+
+.lab-card ul {
+    list-style-type: none;
+}
+
+.lab-card ul li {
+    margin-bottom: 5px;
+}
+
+.name {
+    font-weight: bold;
+    color: #333; /* Maintain contrast for readability */
+}
+
+/* Form styling */
+form {
+    margin-top: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+input[type="file"] {
+    margin-bottom: 10px;
+}
+
+button {
+    background-color: #007bff; /* Consistent blue for buttons */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3; /* Darker blue for hover effect */
+}
+
+/* Footer styling */
+footer {
+    background: #007bff; /* Same blue for footer to match header */
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+    position: relative;
+    width: 100%;
+    bottom: 0;
+}
