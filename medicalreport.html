@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Medical Report Upload</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #e0f7fa;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .upload-container {
+      background-color: #ffffff;
+      padding: 40px;
+      border-radius: 20px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+      max-width: 600px;
+      width: 100%;
+      position: relative;
+    }
+
+    .upload-container h2 {
+      text-align: center;
+      color: #00796b;
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
+
+    .icon {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 20px;
+    }
+
+    .icon img {
+      width: 80px;
+      height: 80px;
+    }
+
+    input[type="file"] {
+      display: none;
+    }
+
+    .custom-file-upload {
+      display: inline-block;
+      background-color: #00796b;
+      color: white;
+      padding: 15px 30px;
+      border-radius: 50px;
+      text-align: center;
+      font-size: 16px;
+      cursor: pointer;
+      margin: 0 auto;
+      transition: background-color 0.3s ease;
+      border: none;
+      width: auto;
+      display: block; /* Center the button */
+      text-align: center;
+    }
+
+    .custom-file-upload:hover {
+      background-color: #004d40;
+    }
+
+    .file-list {
+      margin-top: 20px;
+    }
+
+    .file-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 0;
+      border-bottom: 1px solid #ddd;
+    }
+
+    .file-item:last-child {
+      border-bottom: none;
+    }
+
+    .file-name {
+      color: #00796b;
+      font-size: 15px;
+      margin-right: 10px;
+      flex-grow: 1;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    .file-actions {
+      display: flex;
+      align-items: center;
+    }
+
+    .delete-button {
+      background-color: #e53935;
+      color: white;
+      padding: 5px 10px;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-left: 10px;
+      transition: background-color 0.3s ease;
+      font-size: 12px;
+      border: none;
+    }
+
+    .delete-button:hover {
+      background-color: #b71c1c;
+    }
+
+    .output {
+      text-align: center;
+      margin-top: 20px;
+      font-size: 14px;
+    }
+
+    .file-preview {
+      margin-top: 10px;
+      max-width: 100%;
+      max-height: 200px;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    .file-upload-section {
+      display: flex;
+      justify-content: center;
+      margin-top: 20px;
+    }
+
+    .progress-bar {
+      width: 100px;
+      height: 5px;
+      background-color: #e0e0e0;
+      border-radius: 5px;
+      overflow: hidden;
+      margin-left: 10px;
+    }
+
+    .progress-bar-fill {
+      height: 100%;
+      width: 0%;
+      background-color: #00796b;
+      border-radius: 5px;
+      transition: width 0.4s ease;
+    }
+
+    /* Animated medical cross background */
+    .upload-container::after {
+      content: '+';
+      font-size: 200px;
+      color: rgba(255, 255, 255, 0.05);
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      transform: rotate(45deg);
+    }
+  </style>
+</head>
+<body>
+  <div class="upload-container">
+    <div class="icon">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/6/6a/Medical_icon.png" alt="Medical Icon">
+    </div>
+
+    <h2>Upload Medical Reports</h2>
+
+    <form id="uploadForm" enctype="multipart/form-data">
+      <label for="fileUpload" class="custom-file-upload">
+        Choose Medical Files
+      </label>
+      <input type="file" id="fileUpload" accept=".pdf,.jpg,.png,.doc,.docx" multiple>
+      
+      <div class="file-list" id="fileList"></div>
+
+      <div class="output" id="output"></div>
+    </form>
+  </div>
+
+  <script>
+    const fileInput = document.getElementById('fileUpload');
+    const fileListDisplay = document.getElementById('fileList');
+    const output = document.getElementById('output');
+    
+    // Store selected files
+    let files = [];
+
+    fileInput.addEventListener('change', function() {
+      const selectedFiles = Array.from(fileInput.files);
+      files = files.concat(selectedFiles);  // Add new files to the list
+      renderFileList();
+    });
+
+    // Render the file list
+    function renderFileList() {
+      fileListDisplay.innerHTML = '';  // Clear previous content
+      files.forEach((file, index) => {
+        const fileItem = document.createElement('div');
+        fileItem.classList.add('file-item');
+
+        const fileName = document.createElement('div');
+        fileName.classList.add('file-name');
+        fileName.textContent = file.name;
+
+        const fileActions = document.createElement('div');
+        fileActions.classList.add('file-actions');
+        
+        // Progress bar
+        const progressBar = document.createElement('div');
+        progressBar.classList.add('progress-bar');
+        const progressBarFill = document.createElement('div');
+        progressBarFill.classList.add('progress-bar-fill');
+        progressBar.appendChild(progressBarFill);
+
+        // Delete button
+        const deleteButton = document.createElement('button');
+        deleteButton.classList.add('delete-button');
+        deleteButton.textContent = 'Remove';
+        deleteButton.addEventListener('click', () => removeFile(index));
+
+        fileActions.appendChild(progressBar);
+        fileActions.appendChild(deleteButton);
+
+        fileItem.appendChild(fileName);
+        fileItem.appendChild(fileActions);
+
+        fileListDisplay.appendChild(fileItem);
+
+        // Simulate upload progress
+        simulateProgress(progressBarFill);
+      });
+    }
+
+    // Simulate the progress of file upload
+    function simulateProgress(progressBarFill) {
+      let progress = 0;
+      const interval = setInterval(() => {
+        progress += Math.floor(Math.random() * 20);  // Random progress increment
+        if (progress >= 100) {
+          progress = 100;
+          clearInterval(interval);
+        }
+        progressBarFill.style.width = `${progress}%`;
+      }, 500);  // Progress every half second
+    }
+
+    // Remove a file from the list
+    function removeFile(index) {
+      files.splice(index, 1);  // Remove the file from the array
+      renderFileList();  // Re-render the list
+    }
+  </script>
+</body>
+</html>
