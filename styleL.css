@@ -1,0 +1,100 @@
+/* Body and container styling */
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #00b4db, #0083b0);
+    font-family: 'Arial', sans-serif;
+  }
+  
+  .login-container {
+    position: relative;
+    z-index: 2;
+    background: rgba(255, 255, 255, 0.95);
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 25px rgba(0, 0, 0, 0.15);
+  }
+  
+  .login-box h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #333;
+    font-weight: 400;
+  }
+  
+  .input-group {
+    position: relative;
+    margin-bottom: 30px;
+  }
+  
+  .input-group input {
+    width: 100%;
+    padding: 10px 0;
+    border: none;
+    border-bottom: 2px solid #ccc;
+    background: none;
+    color: #333;
+    font-size: 16px;
+  }
+  
+  .input-group label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: #ccc;
+    transition: 0.3s ease-in-out;
+    pointer-events: none;
+  }
+  
+  .input-group input:focus ~ label, 
+  .input-group input:valid ~ label {
+    top: -20px;
+    left: 0;
+    color: #00b4db;
+    font-size: 12px;
+  }
+  
+  .btn-container {
+    text-align: center;
+  }
+  
+  button {
+    padding: 10px 20px;
+    background-color: #00b4db;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  button:hover {
+    background-color: #0083b0;
+  }
+  
+  /* AI Interaction and Canvas */
+  #ai-interaction {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+    opacity: 0;
+    transition: opacity 0.5s;
+  }
+  
+  video, #face-canvas {
+    display: none;
+  }
+  
+  #background-canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 0;
+  }
+  
