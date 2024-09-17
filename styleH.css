@@ -1,0 +1,102 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f0f0;
+}
+
+header {
+    margin-top: 30px;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    color: #333;
+    text-align: center;
+    margin-top: 20px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    background: linear-gradient(90deg, #00c6ff, #0072ff);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: bold;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 20px;
+    width: 80%;
+    max-width: 800px;
+}
+
+.metric {
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.5s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.metric:hover {
+    transform: scale(1.05);
+}
+
+.metric h2 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.metric p {
+    font-size: 1.2rem;
+    color: #555;
+}
+
+.icon {
+    width: 80px;
+    height: 100px;
+    margin: 0 auto 20px;
+    background-repeat: no-repeat;
+    background-size: contain;
+    animation: pulse 2s infinite;
+}
+
+.heart {
+    background-image: url('https://img.icons8.com/dusk/80/heart-with-pulse.png');
+}
+
+.bp {
+    background-image: url('https://cdni.iconscout.com/illustration/premium/thumb/glucose-monitoring-4403269-3658893.png?f=webp');
+}
+
+.temp {
+    background-image: url('https://img.icons8.com/dusk/80/thermometer.png');
+}
+
+.glucose {
+    background-image: url('https://t3.ftcdn.net/jpg/04/68/41/54/360_F_468415402_lAG5wFKkkSEAFWY8ztDKbaAJwG056xaz.jpg');
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
