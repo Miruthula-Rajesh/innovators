@@ -1,0 +1,77 @@
+<!DOCTYPE html> 
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reports</title>
+    <link rel="stylesheet" href="style2.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#lab-reports">Lab Reports</a></li>
+                <li><a href="#prescription">Prescription</a></li>
+                <li><a href="#diagnosis">Medical Diagnosis</a></li>
+                <li><a href="#record">Record</a></li>
+            </ul>
+        </nav>
+        <h1>Lab Reports</h1>
+    </header>
+    <main>
+        <section id="lab-reports" class="content-section">
+            <h2>Lab Reports</h2>
+            <div class="lab-card">
+                <h3>Test Name:</h3>
+                <p class="name">Blood Test</p>
+                <ul>
+                    <li>Referred by: Dr. Vijay</li>
+                    <li>Date: 12.09.2024</li>
+                    <li>Investigation: Haemoglobin, Blood Indices</li>
+                    <li>Result: 12.5 Low</li>
+                </ul>
+            </div>
+            <div class="lab-card">
+                <h3>Test Name:</h3>
+                <p class="name">Diabetes Test</p>
+                <ul>
+                    <li>Referred by: Dr. Aadhi</li>
+                    <li>Date: 05.09.2024</li>
+                    <li>Investigation: Fasting Blood Sugar Level</li>
+                    <li>Result: 100 mg/dL Normal</li>
+                </ul>
+            </div>
+            <div class="lab-card">
+                <h3>Test Name:</h3>
+                <p class="name">Cardiac Catheterization</p>
+                <ul>
+                    <li>Referred by: Dr. Maaran</li>
+                    <li>Date: 28.08.2024</li>
+                    <li>Investigation: Cardiac Index</li>
+                    <li>Result: 2.8 to 4.2 L/m Normal</li>
+                </ul>
+            </div>
+        </section>
+        <section id="prescription" class="content-section">
+            <h2>Prescription</h2>
+            <form action="/upload" method="post" enctype="multipart/form-data">
+                <label for="prescription-file">Upload your prescription document:</label>
+                <input type="file" id="prescription-file" name="prescription-file" accept=".pdf,.doc,.docx,.jpg,.png">
+                <button type="submit">Upload</button>
+            </form>
+        </section>
+        <section id="diagnosis" class="content-section">
+            <h2>Medical Diagnosis</h2>
+            <p>Contact details and support information will be provided here.</p>
+        </section>
+        <section id="record" class="content-section">
+            <h2>Records</h2>
+            <p>Information about the company will be displayed here.</p>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Lab Records Inc.</p>
+    </footer>
+</body>
+</html>
+ 
