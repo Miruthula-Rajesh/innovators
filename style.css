@@ -1,111 +1,12 @@
-/* Body and container styling */
-body, html {
-    margin: 0;
-    padding: 0;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: linear-gradient(135deg, #00b4db, #0083b0);
-    font-family: 'Arial', sans-serif;
-  }
-  
-  .login-container {
-    position: relative;
-    z-index: 2;
-    background: rgba(255, 255, 255, 0.95);
-    padding: 40px;
-    border-radius: 10px;
-    box-shadow: 0px 4px 25px rgba(0, 0, 0, 0.15);
-  }
-  
-  .login-box h2 {
-    text-align: center;
-    margin-bottom: 30px;
-    color: #333;
-    font-weight: 400;
-  }
-  
-  .input-group {
-    position: relative;
-    margin-bottom: 30px;
-  }
-  
-  .input-group input {
-    width: 100%;
-    padding: 10px 0;
-    border: none;
-    border-bottom: 2px solid #ccc;
-    background: none;
-    color: #333;
-    font-size: 16px;
-  }
-  
-  .input-group label {
-    position: absolute;
-    top: 0;
-    left: 0;
-    color: #ccc;
-    transition: 0.3s ease-in-out;
-    pointer-events: none;
-  }
-  
-  .input-group input:focus ~ label, 
-  .input-group input:valid ~ label {
-    top: -20px;
-    left: 0;
-    color: #00b4db;
-    font-size: 12px;
-  }
-  
-  .btn-container {
-    text-align: center;
-  }
-  
-  button {
-    padding: 10px 20px;
-    background-color: #00b4db;
-    border: none;
-    border-radius: 5px;
-    color: white;
-    font-size: 16px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-  }
-  
-  button:hover {
-    background-color: #0083b0;
-  }
-  
-  /* AI Interaction and Canvas */
-  #ai-interaction {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    z-index: 1;
-    opacity: 0;
-    transition: opacity 0.5s;
-  }
-  
-  video, #face-canvas {
-    display: none;
-  }
-  
-  #background-canvas {
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 0;
-  }
-  .container2{
-background: #FFF0D1;
+.container2{
+
     width:1320px;
-    height:650px;
+    height:620px;
 }
 .contain3{
   background:#E5D9F2 ;
     width:935px;
-    height: 760px;
+    height: 1400px;
     margin-left:150px;
     margin-bottom: 30px;
     padding-top:30px;
@@ -196,4 +97,678 @@ input[type="file"] {
 
 .share-button:hover {
     background-color: #0d8bde; /* Darker blue on hover */
+}
+header {
+    margin-top: 30px;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    color: #333;
+    text-align: center;
+    margin-top: 20px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    background: linear-gradient(90deg, #00c6ff, #0072ff);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: bold;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 20px;
+    width: 80%;
+    max-width: 800px;
+    margin-top: -100px;
+    margin-left: 250px;
+}
+
+.metric {
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    text-align: center;
+    transition: transform 0.5s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.metric:hover {
+    transform: scale(1.05);
+}
+
+.metric h2 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.metric p {
+    font-size: 1.2rem;
+    color: #555;
+}
+
+.icon {
+    width: 80px;
+    height: 100px;
+    margin: 0 auto 20px;
+    background-repeat: no-repeat;
+    background-size: contain;
+    animation: pulse 2s infinite;
+}
+
+.heart {
+    background-image: url('https://img.icons8.com/dusk/80/heart-with-pulse.png');
+}
+
+.bp {
+    background-image: url('https://cdni.iconscout.com/illustration/premium/thumb/glucose-monitoring-4403269-3658893.png?f=webp');
+}
+
+.temp {
+    background-image: url('https://img.icons8.com/dusk/80/thermometer.png');
+}
+
+.glucose {
+    background-image: url('https://t3.ftcdn.net/jpg/04/68/41/54/360_F_468415402_lAG5wFKkkSEAFWY8ztDKbaAJwG056xaz.jpg');
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+.upload-container {
+    background-color: #ffffff;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    max-width: 600px;
+    width: 100%;
+    position: relative;
+    margin-left: 300px;
+    margin-top: 30px;
+  }
+
+  .upload-container h2 {
+    text-align: center;
+    color: #00796b;
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+
+  .icon {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+
+  .icon img {
+    width: 80px;
+    height: 80px;
+  }
+
+  input[type="file"] {
+    display: none;
+  }
+
+  .custom-file-upload {
+    display: inline-block;
+    background-color: #00796b;
+    color: white;
+    padding: 15px 30px;
+    border-radius: 50px;
+    text-align: center;
+    font-size: 16px;
+    cursor: pointer;
+    margin: 0 auto;
+    transition: background-color 0.3s ease;
+    border: none;
+    width: auto;
+    display: block; /* Center the button */
+    text-align: center;
+  }
+
+  .custom-file-upload:hover {
+    background-color: #004d40;
+  }
+
+  .file-list {
+    margin-top: 20px;
+  }
+
+  .file-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 0;
+    border-bottom: 1px solid #ddd;
+  }
+
+  .file-item:last-child {
+    border-bottom: none;
+  }
+
+  .file-name {
+    color: #00796b;
+    font-size: 15px;
+    margin-right: 10px;
+    flex-grow: 1;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .file-actions {
+    display: flex;
+    align-items: center;
+  }
+
+  .delete-button {
+    background-color: #e53935;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left: 10px;
+    transition: background-color 0.3s ease;
+    font-size: 12px;
+    border: none;
+  }
+
+  .delete-button:hover {
+    background-color: #b71c1c;
+  }
+
+  .output {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 14px;
+  }
+
+  .file-preview {
+    margin-top: 10px;
+    max-width: 100%;
+    max-height: 200px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  }
+
+  .file-upload-section {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+  }
+
+  .progress-bar {
+    width: 100px;
+    height: 5px;
+    background-color: #e0e0e0;
+    border-radius: 5px;
+    overflow: hidden;
+    margin-left: 10px;
+  }
+
+  .progress-bar-fill {
+    height: 100%;
+    width: 0%;
+    background-color: #00796b;
+    border-radius: 5px;
+    transition: width 0.4s ease;
+  }
+
+  /* Animated medical cross background */
+  .upload-container::after {
+    content: '+';
+    font-size: 200px;
+    color: rgba(255, 255, 255, 0.05);
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    transform: rotate(45deg);
+  }
+  .button-container {
+    display: flex;
+    background-color: rgba(0, 73, 144);
+    width: 1300px;
+    height: 50px;
+    align-items: center;
+    justify-content: space-around;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px,
+      rgba(0, 73, 144, 0.5) 5px 10px 15px;
+    transition: all 0.5s;
+    position:fixed;
+    bottom:0;
+  }
+ 
+  
+  
+  .button {
+    outline: 0 !important;
+    border: 0 !important;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    transition: all ease-in-out 0.3s;
+    cursor: pointer;
+  }
+  
+  .button:hover {
+    transform: translateY(-3px);
+  }
+  
+  .icon {
+    font-size: 20px;
+  }
+  .inputBox_container {
+    display: flex;
+    align-items: center;
+    justify-content:center ;
+    flex-direction: row;
+    max-width:14em;
+    width:fit-content;
+    height: fit-content;
+    background-color: #5c6370;
+    border-radius: 0.8em;
+    overflow: hidden;
+  }
+  
+  .search_icon {
+    height: 1em;
+    padding: 0 0.5em 0 0.8em;
+    fill: #abb2bf;
+  }
+  
+  .inputBox {
+    background-color: transparent;
+    color: #ffffff;
+    outline: none;
+    width:100%;
+    border: 0;
+    padding: 0.5em 1.5em 0.5em 0;
+    font-size: 1em;
+  }
+  
+  ::placeholder {
+    color: #abb2bf;
+  }
+  .bg{
+    background-image:url("bg.png");
+    height:900px;
+  }
+  .card {
+    width: 570px;
+    height: 170px;
+    background: linear-gradient(120deg, rgba(255,237,57,1) 0%, rgba(247,253,45,1) 100%);
+    ;
+    margin-left: 300px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    border-radius: 15px;
+    transition: all 0.5s ease;
+  }
+  
+  .card::before {
+    content: 'Dart';
+    position: absolute;
+    width: 0px;
+    height: 60px;
+    border-left: 30px solid #3A486F;
+    border-right: 30px solid #3A486F;
+    border-bottom: 10px solid transparent;
+    top: -10px;
+    left: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 8px;
+    text-transform: uppercase;
+    transition: all 0.5s ease;
+  }
+  
+  .svg-icon {
+    width: 5em;
+    height: 5em;
+    fill: #3A486F;
+  }
+  
+  .svgContainer {
+    height: 100px;
+    width: 100px;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .svgContainer svg {
+    position: absolute;
+    overflow: visible;
+  }
+  
+  .dartboard {
+    width: 2em;
+    height: 2em;
+    padding: 6px;
+    border: 3px solid #3A486F;
+    border-radius: 50%;
+    transition: all 0.5s ease;
+    transform: scale(2) rotate(34deg);
+  }
+  
+  .eyehole {
+    transform: scale(1.2) rotate(-270deg);
+    transition: all 0.5s ease;
+  }
+  
+  .batman {
+    transition: all .4s ease-in;
+    transform: rotate(55deg) translate(240px, -45px) scale(1.2);
+  }
+  
+  .svg-fill-primary {
+    fill: #242424;
+  }
+  
+  .card-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    text-align: center;
+    gap: 10px;
+    align-items: center;
+  }
+  
+  .card span {
+    font-size: 20px;
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+  
+  .card-info p {
+    color: #3A486F;
+    font-weight: 600;
+  }
+  
+  .card-info .challengeButton {
+    text-decoration: none;
+    background-color: #343434;
+    color: white;
+    padding: 5px 15px;
+    border-radius: 10px;
+    box-sizing: border-box;
+    transition: all 0.5s ease;
+  }
+  
+  .card:hover {
+    box-shadow: 10px 10px 15px 0px rgba(0,0,0,0.83);
+  }
+  
+  .card:hover .batman {
+    transform: rotate(-50deg) translate(12px, 2px);
+  }
+  
+  .card:hover .eyehole {
+    transform: scale(1);
+  }
+  
+  .card:hover .dartboard {
+    transform: scale(1) rotate(0deg) translate(0, 0);
+  }
+  
+  .challengeButton:hover {
+    background-color: #3A486F;
+  }
+  
+  .card:hover::before {
+    border-left: 30px solid #182445;
+    border-right: 30px solid #182445;
+    border-bottom: 10px solid transparent;
+    top: -15px;
+  }
+  /* styles.css */
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 15px 20px;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    flex-direction: column;
+}
+
+.logo p {
+    margin: 0;
+    font-size: 1.2em;
+    color: #4caf50;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+nav li {
+    margin-right: 20px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+    font-size: 1.2em;
+    transition: color 0.3s ease-in-out;
+}
+
+nav a:hover {
+    color: #ffd700;
+}
+
+.search {
+    display: flex;
+    align-items: center;
+}
+
+.search input {
+    padding: 8px;
+    margin-right: 10px;
+    border: none;
+    border-radius: 5px;
+}
+
+.search button {
+    background-color: #ffd700;
+    color: #333;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.search button:hover {
+    background-color: #ffc107;
+}
+
+@media screen and (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    nav {
+        margin-top: 10px;
+    }
+
+    nav ul {
+        flex-direction: column;
+    }
+
+    nav li {
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+
+    .search {
+        margin-top: 10px;
+    }
+}
+
+.container {
+    display: grid;
+    gap: 1rem;
+    min-height: 70vh;
+}
+
+.category {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(450px, 1fr));
+    gap: 1rem;
+}
+
+.product {
+    position: relative;
+    max-height: auto;
+    border: 1px solid #ddd;
+    padding: 15px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    line-height: 1.5rem;
+    transition: box-shadow 0.3s ease-in-out;
+}
+
+.product:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+}
+
+img {
+    max-width: 100%;
+    height: 200px;
+    object-fit: fill;
+    overflow: hidden;
+    transition: transform 0.3s ease-in-out;
+    margin-bottom: 1rem;
+}
+
+.product:hover img {
+    transform: scale(1.05);
+}
+
+.productbtns button {
+    margin-top: 1rem;
+    cursor: pointer;
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease-in-out;
+    margin-bottom: 1rem;
+    cursor: pointer;
+}
+
+.productbtns button:hover {
+    background-color: #ffc107;
+}
+
+.qyt {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.qyt input {
+    width: 30px;
+    border-radius: 0.1rem;
+    border: 0.1rem solid #4caf50;
+    transition: border-color 0.3s ease-in-out;
+}
+
+.price {
+    color: #ffc107;
+    font-weight: 600;
+    margin: 0 0;
+}
+
+.qyt input,
+.qyt label {
+    margin: 0px 10px;
+}
+
+.product h3 {
+    margin: 0 0;
+}
+
+.image-placeholder {
+    width: 100%;
+    height: 200px;
+    margin-bottom: 1rem;
+    overflow: hidden;
+    position: relative;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+}
+
+.image-placeholder:hover {
+    transform: scale(1.05);
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+    position: relative;
+    bottom: 0;
+    width: auto;
+    padding: 1rem 0rem;
+}
+
+footer p {
+    margin: 0;
+    font-size: 0.9em;
+}
+
+@media screen and (max-width: 768px) {
+    footer {
+        font-size: 0.8em;
+    }
 }
